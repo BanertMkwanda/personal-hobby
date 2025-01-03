@@ -1,0 +1,22 @@
+{% extends "contents/base.html" %}
+{% block page_header %}
+  <div class="jumbotron">
+  	<h1 class="display-3">Keep Your Hobbies.</h1>
+    {% if user.is_authenticated %}
+      <p class="lead">Welcome, I am Banert Mkwanda, in this app you will 
+          enter your hobbies, describe them, explain the reason you like them
+          and you can keep any information about your hobby so next you come
+          you will be able to retrive your whole information. Thank You!</p>
+
+    {% else %}    
+      <p class="lead">Welcome, I am Banert Mkwanda, in this app you will 
+          enter your hobbies, describe them, explain the reason you like them
+          and you can keep any information about your hobby so next you come
+          you will be able to retrive your whole information. Thank You!</p>
+
+      <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"        
+          role="button">Register &raquo;</a>  
+    {% endif %}
+  </div>
+
+{% endblock page_header %}

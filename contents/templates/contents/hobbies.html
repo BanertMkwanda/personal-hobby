@@ -1,0 +1,17 @@
+{% extends "contents/base.html" %}
+
+{% block page_header %}
+  <h1>Topics</h1> 
+{% endblock page_header %}
+
+{% block content %}
+  <ul>
+    {% for hobby in hobbies %}
+      <li><h3>        
+        <a href="{% url 'contents:hobby' hobby.id %}">{{ hobby }}</a>      
+      </h3></li>    
+    {% empty %}      
+      <li><h3>No any hobby has been added so far.</h3></li>    
+    {% endfor %}  </ul>
+      <h3><a href="{% url 'contents:new_hobby' %}">Add a new hobby</a></h3>
+{% endblock content %}

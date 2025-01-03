@@ -1,0 +1,12 @@
+{% extends 'contents/base.html' %}
+{% block content %}
+  
+  <p>Adding new hobby</p>
+
+  <form action="{% url 'contents:new_hobby' %}" method="post">
+  	{% csrf_token %}
+  	{{ form.as_p }}
+  	<button name="submit">Add hobby</button>
+  </form>
+
+{% endblock content %}

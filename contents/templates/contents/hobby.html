@@ -1,0 +1,28 @@
+{% extends 'contents/base.html' %}
+
+{% block page_header %}
+  <small><a href="{% url 'contents:edit_hobby' hobby.id %}">            
+      edit hobby</a></small>
+  <h3>{{ hobby }}</h3> 
+{% endblock page_header %}
+
+{% block content %}  
+  <p>    
+    <a href="{% url 'contents:new_description' hobby.id %}">Add new description</a>  
+  </p>
+  {% for description in descriptions %}
+    <div class="card mb-3">
+      <h4 class="card-header">        
+        {{ description.date_added|date:'M d, Y H:i' }}       
+        <small><a href="{% url 'contents:edit_description' description.id %}">            
+            edit description</a></small>      
+      </h4>    
+      <div class="card-body">
+        {{ description.text|linebreaks }}      
+      </div>    
+    </div>  
+  {% empty %}    
+    <p>No any description has been added so far.</p>  
+  {% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,14 @@
+{% extends 'contents/base.html' %}
+{% block content %}
+
+  <p><a href="{% url 'contents:hobby' hobby.id %}">{{hobby}}</a></p>
+
+  <p>Editting description.</p>
+
+  <form action="{% url 'contents:edit_description' description.id %}" method="post">
+  	{% csrf_token %}
+  	{{ form.as_p }}
+  	<button name="submit">Save changes</button>
+  </form>
+
+{% endblock content %}
