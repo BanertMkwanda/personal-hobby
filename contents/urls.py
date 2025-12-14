@@ -6,7 +6,7 @@ from . import views
 app_name = 'contents'
 
 urlpatterns = [
- path('matches/', views.matches, name="matches",
+ path('matches/', views.matches, name="matches"),
 	# home page url
 	path('', views.index, name='index'),
 	# Hobbies page
