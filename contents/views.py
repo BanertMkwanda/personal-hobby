@@ -5,6 +5,11 @@ from .models import Hobby, Description
 from .forms import HobbyForm, DescriptionForm
 from django.contrib.auth.decorators import login_required
 from django.http import Http404
+from django.http import JsonResponse
+from .matches import my_list
+
+def match(request):
+    return JsonResponse(my_list, safe=False)
 
 def index(request):
 	# Home page
