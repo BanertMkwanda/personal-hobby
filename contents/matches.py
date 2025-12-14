@@ -1,1 +1,1 @@
-["Banert"]
+my_list = ["Banert"]
