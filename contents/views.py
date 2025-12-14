@@ -8,7 +8,7 @@ from django.http import Http404
 from django.http import JsonResponse
 from .matches import my_list
 
-def match(request):
+def matches(request):
     return JsonResponse(my_list, safe=False)
 
 def index(request):
